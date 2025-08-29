@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HTML Demo - Semantics</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="header">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
+      <div class="brand"><span class="dot"></span><span>HTML Demo</span></div>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html">Home</a>
+        <a href="../demos/index.html" aria-current="page">All Demos</a>
+        <button id="toggle-contrast" class="btn" type="button" aria-pressed="false">Toggle Contrast</button>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="container section">
+    <span class="badge">HTML</span>
+    <h1>Semantic Structure</h1>
+
+    <section class="card">
+      <h2>Article</h2>
+      <article>
+        <header><h3>Accessible Article</h3></header>
+        <p>Uses semantic elements: header, article, section, footer.</p>
+<pre class="code">&lt;article&gt;...&lt;/article&gt;</pre>
+        <footer><small class="badge">Published <time datetime="2025-01-15">Jan 15, 2025</time></small></footer>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>Table with Caption</h2>
+      <figure>
+        <figcaption class="badge" style="margin-bottom:.5rem">Weekly Plan</figcaption>
+        <table style="width:100%;border-collapse:collapse">
+          <thead><tr><th style="text-align:left;border-bottom:1px solid var(--border)">Day</th><th style="text-align:left;border-bottom:1px solid var(--border)">Topic</th></tr></thead>
+          <tbody>
+            <tr><td>Mon</td><td>HTML</td></tr>
+            <tr><td>Tue</td><td>CSS</td></tr>
+            <tr><td>Wed</td><td>Bootstrap</td></tr>
+            <tr><td>Thu</td><td>JavaScript</td></tr>
+            <tr><td>Fri</td><td>Project</td></tr>
+          </tbody>
+        </table>
+      </figure>
+    </section>
+  </main>
+  <footer class="footer">© 2025 Sarika Kafle — CET138</footer>
+  <script src="../assets/js/script.js" defer></script>
+</body>
+</html>

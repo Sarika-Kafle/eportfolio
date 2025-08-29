@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sarika Kafle - Full Stack Development ePortfolio | CET138</title>
+  <meta name="description" content="Professional ePortfolio showcasing comprehensive Full Stack Development skills: HTML, CSS, Bootstrap, JavaScript with interactive demos and real-world examples." />
+  <meta name="keywords" content="Full Stack Development, HTML, CSS, Bootstrap, JavaScript, Web Development, CET138, ePortfolio" />
+  <meta name="author" content="Sarika Kafle" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  
+  <header class="header">
+    <div class="container">
+      <div class="brand" aria-label="Site Brand">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Sarika Kafle - Full Stack Developer</span>
+      </div>
+      <nav class="nav" aria-label="Primary Navigation" data-nav>
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="what-is-full-stack.html">Full Stack</a>
+        <a href="html.html">HTML</a>
+        <a href="css.html">CSS</a>
+        <a href="bootstrap.html">Bootstrap</a>
+        <a href="javascript.html">JavaScript</a>
+        <a href="demos/index.html">Demos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero container">
+      <div class="hero-content">
+        <span class="badge">CET138 • Full Stack Development • Assignment 1</span>
+        <h1>Building the Web, End-to-End</h1>
+        <p class="hero-description">
+          Welcome to my comprehensive ePortfolio demonstrating mastery of modern web development technologies. 
+          This portfolio showcases my understanding of the complete web stack—from semantic HTML structure 
+          to dynamic JavaScript interactions, responsive CSS layouts, and Bootstrap framework implementation.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="what-is-full-stack.html" data-demo="full-stack-intro">
+            <span>🚀</span>
+            Explore Full Stack
+          </a>
+          <a class="btn" href="demos/index.html" data-demo="all-demos">
+            <span>🎯</span>
+            View All Demos
+          </a>
+          <button id="toggle-contrast" class="btn" aria-pressed="false" aria-label="Toggle high contrast mode">
+            <span>👁️</span>
+            Toggle Contrast
+          </button>
+        </div>
+      </div>
+      
+      <div class="hero-visual">
+        <div class="card">
+          <img src="assets/img/diagram.svg" alt="Full Stack Architecture Diagram showing Browser, Server, Database, and API interactions" style="width:100%;height:auto;border-radius:.75rem" />
+          <div class="card-overlay">
+            <h3>Full Stack Architecture</h3>
+            <p>Understanding the complete web development ecosystem</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2>Technical Skills Demonstrated</h2>
+      <div class="grid cols-3">
+        <div class="card skill-card" data-demo="html-skills">
+          <div class="skill-icon">🌐</div>
+          <h3>HTML5 & Semantics</h3>
+          <p>Semantic markup, accessibility standards, and modern HTML5 features including forms, tables, and multimedia elements.</p>
+          <ul class="skill-list">
+            <li>Semantic HTML structure</li>
+            <li>Accessibility (ARIA, WCAG)</li>
+            <li>Form validation & UX</li>
+            <li>SEO optimization</li>
+          </ul>
+          <a href="html.html" class="btn">Explore HTML</a>
+        </div>
+        
+        <div class="card skill-card" data-demo="css-skills">
+          <div class="skill-icon">🎨</div>
+          <h3>CSS3 & Responsive Design</h3>
+          <p>Advanced CSS techniques including Flexbox, Grid, animations, and responsive design principles for modern web applications.</p>
+          <ul class="skill-list">
+            <li>Flexbox & CSS Grid</li>
+            <li>Responsive breakpoints</li>
+            <li>CSS animations & transitions</li>
+            <li>Custom properties (CSS variables)</li>
+          </ul>
+          <a href="css.html" class="btn">Explore CSS</a>
+        </div>
+        
+        <div class="card skill-card" data-demo="bootstrap-skills">
+          <div class="skill-icon">⚡</div>
+          <h3>Bootstrap Framework</h3>
+          <p>Proficient use of Bootstrap 5 for rapid UI development, component customization, and responsive grid systems.</p>
+          <ul class="skill-list">
+            <li>Bootstrap 5 components</li>
+            <li>Responsive grid system</li>
+            <li>Custom theming</li>
+            <li>Component customization</li>
+          </ul>
+          <a href="bootstrap.html" class="btn">Explore Bootstrap</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2>Portfolio Sections</h2>
+      <div class="grid cols-2">
+        <a class="card portfolio-card" href="what-is-full-stack.html" data-demo="full-stack-section">
+          <div class="card-header">
+            <h3>What is Full Stack Development?</h3>
+            <span class="section-badge">Concepts</span>
+          </div>
+          <p>Comprehensive understanding of full stack architecture, including frontend and backend technologies, 
+             API design, database management, and deployment strategies.</p>
+          <div class="card-footer">
+            <span class="learn-more">Learn More →</span>
+          </div>
+        </a>
+        
+        <a class="card portfolio-card" href="javascript.html" data-demo="javascript-section">
+          <div class="card-header">
+            <h3>JavaScript & Interactivity</h3>
+            <span class="section-badge">Dynamic</span>
+          </div>
+          <p>Advanced JavaScript programming including DOM manipulation, event handling, form validation, 
+             and modern ES6+ features with practical examples.</p>
+          <div class="card-footer">
+            <span class="learn-more">Learn More →</span>
+          </div>
+        </a>
+        
+        <a class="card portfolio-card" href="demos/index.html" data-demo="demos-section">
+          <div class="card-header">
+            <h3>Interactive Demonstrations</h3>
+            <span class="section-badge">Live</span>
+          </div>
+          <p>Working examples and interactive demos showcasing real-world applications of all technologies 
+             covered in this portfolio with practical implementations.</p>
+          <div class="card-footer">
+            <span class="learn-more">View Demos →</span>
+          </div>
+        </a>
+        
+        <a class="card portfolio-card" href="#accessibility" data-demo="accessibility-section">
+          <div class="card-header">
+            <h3>Accessibility & Best Practices</h3>
+            <span class="section-badge">WCAG</span>
+          </div>
+          <p>Demonstration of accessibility standards, responsive design principles, performance optimization, 
+             and modern web development best practices.</p>
+          <div class="card-footer">
+            <span class="learn-more">Learn More →</span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <p>© 2025 Sarika Kafle • CET138 Full Stack Development ePortfolio</p>
+          <p>University of Southampton • Computer Science</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="demos/index.html">Demos</a>
+          <button id="toggle-contrast-footer" class="btn-link" aria-label="Toggle contrast mode">Accessibility</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="assets/js/script.js" defer></script>
+</body>
+</html>

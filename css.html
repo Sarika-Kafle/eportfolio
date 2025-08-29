@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CSS — Responsive Layout & Visual Design</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .demo-box{height:100px;border-radius:.75rem;display:flex;align-items:center;justify-content:center;border:1px dashed rgba(255,255,255,.25)}
+    .flex-demo{display:flex;gap:1rem;flex-wrap:wrap}
+    .flex-demo .demo-box{flex:1 1 200px}
+  </style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+<header class="header">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:1rem">
+    <div class="brand"><span class="dot"></span><span>Full Stack ePortfolio</span></div>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="what-is-full-stack.html">What is Full Stack?</a>
+      <a href="html.html">HTML</a>
+      <a aria-current="page" href="css.html">CSS</a>
+      <a href="bootstrap.html">Bootstrap</a>
+      <a href="javascript.html">JavaScript</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="container section">
+  <span class="badge">CSS</span>
+  <h1>Responsive Layout & Visual Design</h1>
+  <p>CSS controls layout, spacing, color, and typography. Below we demonstrate responsive Flexbox layout and utility styles from our global stylesheet.</p>
+  <div class="card">
+    <h2>Flexbox Layout Demo</h2>
+    <div class="flex-demo">
+      <div class="demo-box">Box A</div>
+      <div class="demo-box">Box B</div>
+      <div class="demo-box">Box C</div>
+    </div>
+  </div>
+  <div class="grid cols-2" style="margin-top:1rem">
+    <div class="card">
+      <h2>Hover & Focus</h2>
+      <p>Interactive link with focus styles for accessibility:</p>
+      <a class="btn" href="#">Focusable Button</a>
+    </div>
+    <div class="card">
+      <h2>Typography</h2>
+      <p>Readable text with comfortable line-height and contrast. Use rem units and spacing tokens for consistency.</p>
+    </div>
+  </div>
+</main>
+<footer class="footer"><div class="container">© 2025 Sarika Kafle • CET138 ePortfolio</div></footer>
+<script src="assets/js/script.js" defer></script>
+</body></html>

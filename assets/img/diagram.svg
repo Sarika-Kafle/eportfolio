@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="240" viewBox="0 0 900 240" role="img" aria-labelledby="title desc">
+  <title id="title">Full Stack Diagram</title>
+  <desc id="desc">A diagram showing browser, server, and database with arrows.</desc>
+  <defs>
+    <filter id="glow"><feGaussianBlur stdDeviation="3.5" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#0b1020"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#eef2ff" text-anchor="middle">
+    <rect x="40" y="70" rx="14" ry="14" width="220" height="100" fill="#0f1730" stroke="#a78bfa"/>
+    <text x="150" y="115" font-size="18">Browser (Frontend)</text>
+    <text x="150" y="145" font-size="14" fill="#c7cbe6">HTML • CSS • JS</text>
+
+    <rect x="340" y="70" rx="14" ry="14" width="220" height="100" fill="#0f1730" stroke="#67e8f9"/>
+    <text x="450" y="115" font-size="18">Server (Backend)</text>
+    <text x="450" y="145" font-size="14" fill="#c7cbe6">Node • Express • APIs</text>
+
+    <rect x="640" y="70" rx="14" ry="14" width="220" height="100" fill="#0f1730" stroke="#60a5fa"/>
+    <text x="750" y="115" font-size="18">Database</text>
+    <text x="750" y="145" font-size="14" fill="#c7cbe6">SQL • NoSQL</text>
+
+    <g stroke="#eef2ff" stroke-width="2" marker-end="url(#arrow)" filter="url(#glow)">
+      <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L0,6 L9,3 z" fill="#eef2ff" />
+      </marker></defs>
+      <line x1="260" y1="120" x2="340" y2="120"/>
+      <line x1="560" y1="120" x2="640" y2="120"/>
+      <line x1="640" y1="150" x2="560" y2="150"/>
+      <line x1="340" y1="150" x2="260" y2="150"/>
+    </g>
+  </g>
+</svg>
