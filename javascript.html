@@ -9,6 +9,28 @@
   <style>
     #todo-list li{cursor:pointer;margin:.25rem 0;padding:.35rem .5rem;border-radius:.5rem;border:1px solid rgba(255,255,255,.15)}
     #todo-list li.done{opacity:.7;text-decoration:line-through}
+    
+    .calculator{max-width:300px;margin:0 auto}
+    .calculator-display{margin-bottom:1rem}
+    .calculator-buttons{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem}
+    .calc-btn{min-height:50px;font-size:1.1rem;font-weight:500}
+    .calc-btn:hover{transform:scale(1.05);transition:transform 0.1s ease}
+    .calc-btn:active{transform:scale(0.95)}
+    
+    .card{transition:all 0.3s ease;cursor:default}
+    .card:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,0.15)}
+    
+    .badge{transition:all 0.3s ease;cursor:pointer}
+    .badge:hover{transform:scale(1.1);background:rgba(255,255,255,0.2)}
+    
+    .nav a{transition:all 0.2s ease}
+    .nav a:hover{background:rgba(255,255,255,0.1);transform:translateY(-1px)}
+    
+    .btn{transition:all 0.2s ease}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,0.15)}
+    
+    .calculator{transition:all 0.3s ease}
+    .calculator:hover{transform:scale(1.02)}
   </style>
 </head>
 <body>
@@ -29,10 +51,11 @@
 <main id="main" class="container section">
   <span class="badge">JavaScript</span>
   <h1>DOM Manipulation, Events, and Simple State</h1>
-  <p>This page includes two JavaScript demos: a to‑do list and basic form validation. The scripts use vanilla JS (no frameworks) and emphasize accessibility.</p>
-  <div class="grid cols-2">
+  <p>This page includes three JavaScript demos: a to‑do list, basic form validation, and a functional calculator. The scripts use vanilla JS (no frameworks) and emphasize accessibility. JavaScript is what makes websites interactive - it's like adding a brain to your HTML and CSS, allowing users to click buttons, fill out forms, and see real-time updates without refreshing the page.</p>
+  <div class="grid cols-3">
     <div class="card">
       <h2>To‑Do List</h2>
+      <p>A simple task manager that demonstrates how JavaScript can create, read, update, and delete items from a list. This shows basic DOM manipulation - creating new elements, adding event listeners, and managing application state.</p>
       <div class="input-group mb-3">
         <input id="todo-input" class="form-control" type="text" placeholder="Add an item…" aria-label="New to-do item">
         <button id="todo-add" class="btn" type="button">Add</button>
@@ -40,7 +63,8 @@
       <ul id="todo-list" aria-live="polite"></ul>
     </div>
     <div class="card">
-      <h2>Validation (re-uses global form logic)</h2>
+      <h2>Form Validation</h2>
+      <p>This form uses our global validation logic to check user input in real-time. It demonstrates how JavaScript can provide immediate feedback to users, making forms more user-friendly and reducing errors before submission.</p>
       <form data-validate>
         <div class="mb-3">
           <label class="form-label" for="name">Name</label>
@@ -56,6 +80,39 @@
         </div>
         <button class="btn" type="submit">Submit</button>
       </form>
+    </div>
+    <div class="card">
+      <h2>Calculator</h2>
+      <p>A fully functional calculator that demonstrates more complex JavaScript concepts like event handling, mathematical operations, and state management. Try performing some calculations to see how JavaScript handles user input and displays results.</p>
+      <div class="calculator">
+        <div class="calculator-display">
+          <input type="text" id="calculator-input" class="form-control text-end" readonly value="0" aria-label="Calculator display">
+        </div>
+        <div class="calculator-buttons">
+          <button class="btn btn-secondary calc-btn" data-action="clear">C</button>
+          <button class="btn btn-secondary calc-btn" data-action="delete">⌫</button>
+          <button class="btn btn-secondary calc-btn" data-action="operator" data-operator="/">÷</button>
+          <button class="btn btn-secondary calc-btn" data-action="operator" data-operator="*">×</button>
+          
+          <button class="btn calc-btn" data-action="number" data-number="7">7</button>
+          <button class="btn calc-btn" data-action="number" data-number="8">8</button>
+          <button class="btn calc-btn" data-action="number" data-number="9">9</button>
+          <button class="btn btn-secondary calc-btn" data-action="operator" data-operator="-">−</button>
+          
+          <button class="btn calc-btn" data-action="number" data-number="4">4</button>
+          <button class="btn calc-btn" data-action="number" data-number="5">5</button>
+          <button class="btn calc-btn" data-action="number" data-number="6">6</button>
+          <button class="btn btn-secondary calc-btn" data-action="operator" data-operator="+">+</button>
+          
+          <button class="btn calc-btn" data-action="number" data-number="1">1</button>
+          <button class="btn calc-btn" data-action="number" data-number="2">2</button>
+          <button class="btn calc-btn" data-action="number" data-number="3">3</button>
+          <button class="btn btn-primary calc-btn" data-action="equals" style="grid-row: span 2;">=</button>
+          
+          <button class="btn calc-btn" data-action="number" data-number="0" style="grid-column: span 2;">0</button>
+          <button class="btn calc-btn" data-action="decimal">.</button>
+        </div>
+      </div>
     </div>
   </div>
 </main>

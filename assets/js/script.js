@@ -361,6 +361,136 @@
     }
   };
 
+  // Calculator Functionality
+  const Calculator = {
+    currentInput: '0',
+    previousInput: '',
+    operation: null,
+    waitingForNewInput: false,
+    
+    init() {
+      this.display = $('#calculator-input');
+      if (!this.display) return;
+      
+      const buttons = $$('.calc-btn');
+      buttons.forEach(button => {
+        button.addEventListener('click', (e) => {
+          const action = button.dataset.action;
+          const value = button.dataset.number || button.dataset.operator;
+          
+          switch(action) {
+            case 'number':
+              this.inputNumber(value);
+              break;
+            case 'operator':
+              this.inputOperator(value);
+              break;
+            case 'decimal':
+              this.inputDecimal();
+              break;
+            case 'equals':
+              this.calculate();
+              break;
+            case 'clear':
+              this.clear();
+              break;
+            case 'delete':
+              this.delete();
+              break;
+          }
+        });
+      });
+    },
+    
+    inputNumber(num) {
+      if (this.waitingForNewInput) {
+        this.currentInput = num;
+        this.waitingForNewInput = false;
+      } else {
+        this.currentInput = this.currentInput === '0' ? num : this.currentInput + num;
+      }
+      this.updateDisplay();
+    },
+    
+    inputOperator(op) {
+      if (this.currentInput === '0' && this.previousInput === '') return;
+      
+      if (this.previousInput !== '' && !this.waitingForNewInput) {
+        this.calculate();
+      }
+      
+      this.operation = op;
+      this.previousInput = this.currentInput;
+      this.waitingForNewInput = true;
+    },
+    
+    inputDecimal() {
+      if (this.waitingForNewInput) {
+        this.currentInput = '0.';
+        this.waitingForNewInput = false;
+      } else if (this.currentInput.indexOf('.') === -1) {
+        this.currentInput += '.';
+      }
+      this.updateDisplay();
+    },
+    
+    calculate() {
+      if (this.previousInput === '' || this.waitingForNewInput) return;
+      
+      let result;
+      const prev = parseFloat(this.previousInput);
+      const current = parseFloat(this.currentInput);
+      
+      switch(this.operation) {
+        case '+':
+          result = prev + current;
+          break;
+        case '-':
+          result = prev - current;
+          break;
+        case '*':
+          result = prev * current;
+          break;
+        case '/':
+          if (current === 0) {
+            utils.showNotification('Cannot divide by zero!', 'error');
+            return;
+          }
+          result = prev / current;
+          break;
+        default:
+          return;
+      }
+      
+      this.currentInput = result.toString();
+      this.operation = null;
+      this.previousInput = '';
+      this.waitingForNewInput = true;
+      this.updateDisplay();
+    },
+    
+    clear() {
+      this.currentInput = '0';
+      this.previousInput = '';
+      this.operation = null;
+      this.waitingForNewInput = false;
+      this.updateDisplay();
+    },
+    
+    delete() {
+      if (this.currentInput.length === 1) {
+        this.currentInput = '0';
+      } else {
+        this.currentInput = this.currentInput.slice(0, -1);
+      }
+      this.updateDisplay();
+    },
+    
+    updateDisplay() {
+      this.display.value = this.currentInput;
+    }
+  };
+
   // Interactive Demo Features (trimmed)
   const DemoFeatures = {
     init() {
@@ -390,6 +520,7 @@
     ThemeManager.init();
     TodoManager.init();
     FormValidator.init();
+    Calculator.init();
     DemoFeatures.init();
   }
 
